@@ -27,8 +27,7 @@ function Dashboard() {
 
     const fetchJobs = async () => {
     try {
-        const response = await axios.get(
-        "http://localhost:3000/api/jobs",
+        const response = await api.get("/jobs",
         {
             headers: {
             Authorization: `Bearer ${token}`,
@@ -68,8 +67,7 @@ const updateStatus = async (id, status) => {
 
   try {
 
-    await axios.put(
-      `http://localhost:3000/api/jobs/${id}`,
+    await api.put(`/jobs/${id}`,
       { status },
       {
         headers: {
@@ -105,8 +103,7 @@ const updateStatus = async (id, status) => {
 
     try {
 
-      await axios.post(
-        "http://localhost:3000/api/jobs",
+      await api.post("/jobs",
         formData,
         {
           headers: {

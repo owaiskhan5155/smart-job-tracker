@@ -2,7 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 import { useState } from "react";
 
-import axios from "axios";
+import api from "../services/api";
 
 function Login() {
 
@@ -26,10 +26,10 @@ function Login() {
 
     try {
 
-      const response = await axios.post(
-        "http://localhost:3000/api/auth/login",
-        formData
-      );
+      const response = await api.post(
+  "/auth/login",
+  formData
+);
 
       localStorage.setItem(
         "token",
