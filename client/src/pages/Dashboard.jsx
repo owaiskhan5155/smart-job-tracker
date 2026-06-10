@@ -46,8 +46,7 @@ function Dashboard() {
 
   try {
 
-    await axios.delete(
-      `http://localhost:3000/api/jobs/${id}`,
+    await api.delete(`/jobs/${id}`,
       {
         headers: {
           Authorization: `Bearer ${token}`,
