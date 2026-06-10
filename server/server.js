@@ -14,10 +14,13 @@ connectDB();
 
 const app = express();
 
+const cors = require("cors");
+
 app.use(
   cors({
     origin: [
-      "http://localhost:5173"
+      "http://localhost:5173",
+      "https://smart-job-tracker-chi.vercel.app",
     ],
     credentials: true,
   })
